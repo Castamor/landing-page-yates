@@ -1,0 +1,13 @@
+---
+interface Props {
+    to: string;
+    description: string;
+}
+
+const { to, description } = Astro.props
+---
+
+
+<a href={to} title={description} target="_blank" rel="noopener noreferrer" class="p-2 hover:cursor-pointer">
+    <slot/>
+</a>

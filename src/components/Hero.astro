@@ -1,17 +1,45 @@
 ---
-import Facebook from "src/icons/facebook.astro";
-import Instagram from "src/icons/instagram.astro";
-import Whatsapp from "src/icons/whatsapp.astro";
+import FacebookIcon from "@icons/Facebook.astro";
+import EmailIcon from "@icons/Email.astro";
+import WhatsappIcon from "@icons/Whatsapp.astro";
+import Link from "@layouts/Link.astro";
 ---
 
-<section class="bg-[url('/10.jpg')] bg-center h-dvh bg-cover grid justify-center items-center">
+<section class="bg-hero h-dvh grid justify-center items-center">
     <div class="text-center">
-        <h1 class="text-8xl font-extrabold">ALOHA</h1>
-        <h2 class="text-2xl font-bold">RENTA DE YATES</h2>
-        <div class="flex justify-around mt-4">
-            <Facebook/>
-            <Whatsapp/>
-            <Instagram/>
+        <h1 class="text-8xl font-extrabold">RENTA DE YATES</h1>
+        <h2 class="text-2xl font-bold">MAZATLÁN, SINALOA</h2>
+        <div class="flex justify-center gap-7 mt-1.5">
+            <Link
+                to="https://www.facebook.com/share/sX7qX2m9skcQmPrx/"
+                description="Facebook"
+            >
+                <FacebookIcon/>
+            </Link>
+            <Link
+                to="https://api.whatsapp.com/send?phone=%2B526691476082&context=ARCqo5HytdUMPR1IzhOHBScA5OT1xW3nuh3tgpnM-WcTkwzn4y5xCf2Uc0ZMvKLUfP1IkB6ZWXSAztPV1FJpv_cAxF8avhIGjKJy1rwTvKSjpREDEFZxw9WN4fl6Kl-QvPISDvMab-RygMCSIs2RQUrEGg&source=FB_Page&app=facebook&entry_point=page_cta&sfnsn=scwspwa"
+                description="Whatsapp"
+            >
+                <WhatsappIcon/>
+            </Link>
+            <Link
+                to="mailto:tucana5@hotmail.com"
+                description="Email"
+            >
+                <EmailIcon/>
+            </Link>
         </div>
     </div>
 </section>
+
+<style>
+    .bg-hero {
+        --opacity: 0.4;
+        background: 
+            linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
+            url('/10.jpg')
+        ;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
