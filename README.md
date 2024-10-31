@@ -9,3 +9,10 @@
 - Dos horarios. Am: 9 am a 2 pm y Pm: 2 pm a 7 pm.
 - Lugar de salida: Marina Mazatlán muelle 10
 - Correo contacto: tucana5@hotmail.com 
+
+- Edad
+- Personas
+- Horarios
+- Actividades
+- Ubicacion
+- Hora
