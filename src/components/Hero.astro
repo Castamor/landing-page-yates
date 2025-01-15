@@ -1,45 +1,85 @@
 ---
-import FacebookIcon from "@icons/Facebook.astro";
-import EmailIcon from "@icons/Email.astro";
-import WhatsappIcon from "@icons/Whatsapp.astro";
-import Link from "@layouts/Link.astro";
+import Redes from "./Redes.astro";
 ---
 
-<section class="bg-hero h-dvh grid justify-center items-center">
-    <div class="text-center">
-        <h1 class="text-8xl font-extrabold">RENTA DE YATES</h1>
-        <h2 class="text-2xl font-bold">MAZATLÁN, SINALOA</h2>
-        <div class="flex justify-center gap-7 mt-1.5">
-            <Link
-                to="https://www.facebook.com/share/sX7qX2m9skcQmPrx/"
-                description="Facebook"
-            >
-                <FacebookIcon/>
-            </Link>
-            <Link
-                to="https://api.whatsapp.com/send?phone=%2B526691476082&context=ARCqo5HytdUMPR1IzhOHBScA5OT1xW3nuh3tgpnM-WcTkwzn4y5xCf2Uc0ZMvKLUfP1IkB6ZWXSAztPV1FJpv_cAxF8avhIGjKJy1rwTvKSjpREDEFZxw9WN4fl6Kl-QvPISDvMab-RygMCSIs2RQUrEGg&source=FB_Page&app=facebook&entry_point=page_cta&sfnsn=scwspwa"
-                description="Whatsapp"
-            >
-                <WhatsappIcon/>
-            </Link>
-            <Link
-                to="mailto:tucana5@hotmail.com"
-                description="Email"
-            >
-                <EmailIcon/>
-            </Link>
-        </div>
+<section class="bg">
+    <ul class="menu">
+        <a href="#about">Información</a>
+        <a href="#services">Paquetes</a>
+        <a href="#gallery">Galería</a>
+    </ul>
+    <div class="textos">
+        <h1>
+            <span class="a">A</span>
+            <span class="l">l</span>
+            <span class="o">o</span>
+            <span class="h">h</span>
+            <span class="aa">a</span>
+            <span class="trimaran">trimaran</span>
+        </h1>
+        <h2>MAZATLÁN, SINALOA</h2>
+        <Redes/>
     </div>
 </section>
 
 <style>
-    .bg-hero {
-        --opacity: 0.4;
+    section {
+        color: white;
+        height: 100dvh;
+        display: grid;
+        place-items: center;
+        position: relative;
+    }
+
+    .bg {
+        --opacity: 0.5;
         background: 
             linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
             url('/10.jpg')
         ;
         background-position: center;
         background-size: cover;
+    }
+
+    .menu {
+        position: absolute;
+        top: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 500;
+        display: flex;
+        gap: 4rem;
+
+        & a {
+            padding: .5rem 1.5rem;
+            border-radius: .5rem;
+            cursor: pointer;
+        }
+    }
+
+    .textos {
+        text-align: center;
+        font-weight: bold;
+
+        & h1 {
+            font-family: "Caveat", system-ui;
+            font-size: 8rem;
+            line-height: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            & .a { color: #0282b2; }
+            & .l { color: #f47b26; }
+            & .o { color: #f9e530; }
+            & .h { color: #db052b; }
+            & .aa { color: #2e3fff; }
+            & .trimaran { margin-left: 2rem; }
+        }
+
+        & h2 {
+            margin-top: -.75rem;
+            margin-bottom: 1.5rem;
+        }
     }
 </style>

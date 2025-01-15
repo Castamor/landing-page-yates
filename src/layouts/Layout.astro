@@ -1,4 +1,6 @@
 ---
+import Flecha from '@icons/Flecha.astro';
+
 interface Props {
 	title: string;
     description: string;
@@ -13,26 +15,50 @@ const { title, description } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/yate.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Caveat:wght@400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 		<title>{title}</title>
 	</head>
-	<body>
+	<body id="arriba">
 		<slot />
+        <a href="#arriba" class="btn-flotante">
+            <Flecha size={24}/>
+        </a>
 	</body>
 </html>
 
 <style is:global>
-	:root {}
+    .contenido {
+        width: min(90%, 1100px);
+        margin: 0 auto;
+    }
 
+    .encabezado {
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    .descripcion {
+        max-width: 800px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    body {
+        display: grid;
+        gap: 2.5rem;
+    }
+    
 	html {
+        scroll-behavior: smooth;
         font-family: "Outfit", system-ui;
         font-optical-sizing: auto;
         font-style: normal;
-        color: white;
-		background: #13151a;
+        color: black;
+		background: #f9f9f9;
 	}
 
     li {
@@ -44,4 +70,32 @@ const { title, description } = Astro.props;
         width: var(--size);
         height: var(--size);
     }
+
+    .btn-flotante {
+        position: fixed;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: .8rem;
+        border-radius: 25%;
+        right: 2.5%;
+        bottom: 2.5%;
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .ocultar {
+        display: none;
+        pointer-events: none;
+    }
 </style>
+
+<script>
+    const btnFlotante = document.querySelector('.btn-flotante')
+    window.addEventListener('scroll', () => {
+        if (window.scrollY === 0) btnFlotante?.classList.add('ocultar')
+        else btnFlotante?.classList.remove('ocultar')
+    });
+</script>

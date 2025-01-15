@@ -1,1 +1,119 @@
-<p>Bento Grid</p>
+---
+import Actividades from "@icons/Actividades.astro";
+import Edades from "@icons/Edades.astro";
+import Horarios from "@icons/Horarios.astro";
+import Ubicacion from "@icons/Ubicacion.astro";
+import Personas from "@icons/Personas.astro";
+---
+
+<section class="contenido" id="about">
+    <h3 class="encabezado">Descubre la experiencia perfecta en el mar</h3>
+    <p class="descripcion">
+        Explora momentos inolvidables con nuestra renta de yates diseñada para paseos privados, celebraciones especiales, despedidas y más. ¡Además, también ofrecemos pesca deportiva para los amantes de la aventura!.
+    </p>
+
+    <section class="bento">
+        <div class="item fondo actividades">
+            <Actividades />
+            <p>Kayaks, paddles, boards, snorkel, cañas de pescar</p>
+            <p class="nombre">ACTIVIDADES</p>
+        </div>
+        <div class="item fondo horarios">
+            <Horarios/>
+            <p>9 a.m. - 7 p.m.</p>
+            <p class="nombre">HORARIOS</p>
+        </div>
+        <div class="item fondo ubicacion">
+            <Ubicacion />
+            <p>Marina Mazatlán, muelle 10</p>
+            <p class="nombre">SALIDA</p>
+        </div>
+        <div class="item fondo edades">
+            <Edades />
+            <p>De 12 a 55 años</p>
+            <p class="nombre">EDADES</p>
+        </div>
+        <div class="item fondo personas">
+            <Personas />
+            <p>Hasta 25 personas</p>
+            <p class="nombre">CAPACIDAD DE PERSONAS</p>
+        </div>
+    </section>
+</section>
+
+<style>
+
+    .descripcion {
+        margin-bottom: 1rem;
+    }
+    .nombre {
+        font-weight: bold;
+        color: #60c0e4;
+        font-size: 1rem;
+    }
+    .bento {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 1.3rem;
+    }
+
+    .actividades {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+        background: 
+            linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
+            url('/kids-focas.jpg');
+        background-position: center;
+        
+    }
+
+    .horarios {
+        background: 
+            linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
+            url('/atardecer-original.jpg');
+        background-position-x: center;
+        background-position-y: 70%;
+    }
+
+    .ubicacion {
+        background: 
+            linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
+            url('/footer.jpg');
+        background-position-x: center;
+        background-position-y: 75%;
+    }
+
+    .edades {
+        background: 
+            linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
+            url('/people3.jpg');
+        background-position: center;
+    }
+
+    .personas {
+        grid-column: 2 / 4;
+        background: 
+            linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
+            url('/personas-2.jpg');
+        background-position-x: center;
+        background-position-y: 57.5%;
+    }
+
+    .fondo {
+        --opacity: 0.45;
+        background-size: cover;
+    }
+</style>

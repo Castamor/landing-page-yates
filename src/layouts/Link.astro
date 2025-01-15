@@ -2,12 +2,27 @@
 interface Props {
     to: string;
     description: string;
+    class?: string;
 }
 
-const { to, description } = Astro.props
+const { to, description, class: className } = Astro.props
 ---
 
 
-<a href={to} title={description} target="_blank" rel="noopener noreferrer" class="p-2 hover:cursor-pointer">
+<a href={to} title={description} target="_blank" rel="noopener noreferrer" class:list={[className]}>
     <slot/>
 </a>
+
+<style>
+    a {
+        padding: .5rem;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+    }
+</style>

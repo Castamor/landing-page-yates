@@ -1,0 +1,60 @@
+---
+import Link from "@layouts/Link.astro";
+import FacebookIcon from "@icons/Facebook.astro";
+import EmailIcon from "@icons/Email.astro";
+import WhatsappIcon from "@icons/Whatsapp.astro";
+---
+
+<ul>
+    <Link
+        to="https://www.facebook.com/tucana5"
+        description="Facebook"
+        class="text-blue-500 hover:text-blue-400"
+    >
+        <FacebookIcon/>
+    </Link>
+    <Link
+        to="mailto:tucana5@hotmail.com"
+        description="Email"
+        class="text-red-600 hover:text-red-500"
+    >
+        <EmailIcon/>
+    </Link>
+    <Link
+        to="https://wa.link/fofcou"
+        description="Whatsapp"
+        class="text-green-600 hover:text-green-500"
+    >
+        <WhatsappIcon/>
+    </Link>
+
+    <span>¡Contáctanos!</span>
+</div>
+
+<style>
+    ul {
+        display: flex;
+        justify-content: center;
+        gap: 1.75rem;
+        position: relative;
+        width: min-content;
+        margin: 1rem auto;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: .5rem;
+    }
+
+    span {
+        color: #facc15;
+        font-weight: bold;
+        font-family: "Caveat", system-ui;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        pointer-events: none;
+
+        position: absolute;
+        right: -2.75rem;
+        top: -0.875rem;
+        transform: rotate(12deg);
+    }
+    
+</style>
