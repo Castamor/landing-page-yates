@@ -10,6 +10,11 @@
 - Lugar de salida: Marina Mazatlán muelle 10
 - Correo contacto: tucana5@hotmail.com 
 
+# Link y contactos
+(Instagram) https://www.instagram.com/aloha_trimaran/
+(Facebook) https://www.facebook.com/tucana5
+(Whatsapp) https://wa.link/fofcou
+
 # Imagenes
 ![Sección Hero](/img/image.png)
 ![Sección Información](/img/image-1.png)
