@@ -3,22 +3,24 @@ import Redes from "./Redes.astro";
 ---
 
 <section class="bg">
-    <ul class="menu">
-        <a href="#about">Información</a>
-        <a href="#services">Paquetes</a>
-        <a href="#gallery">Galería</a>
-    </ul>
-    <div class="textos">
-        <h1>
-            <span class="a">A</span>
-            <span class="l">l</span>
-            <span class="o">o</span>
-            <span class="h">h</span>
-            <span class="aa">a</span>
-            <span class="trimaran">trimaran</span>
-        </h1>
-        <h2>MAZATLÁN, SINALOA</h2>
-        <Redes/>
+    <div class="contenido">
+        <ul class="menu">
+            <a href="#about">Información</a>
+            <a href="#services">Paquetes</a>
+            <a href="#gallery">Galería</a>
+        </ul>
+        <div class="textos">
+            <h1>
+                <span class="a">A</span>
+                <span class="l">l</span>
+                <span class="o">o</span>
+                <span class="h">h</span>
+                <span class="aa">a</span>
+                <span class="trimaran">trimaran</span>
+            </h1>
+            <h2>MAZATLÁN, SINALOA</h2>
+            <Redes/>
+        </div>
     </div>
 </section>
 
@@ -55,6 +57,10 @@ import Redes from "./Redes.astro";
             border-radius: .5rem;
             cursor: pointer;
         }
+
+        @media (width <= 768px) {
+            gap: 0;
+        }
     }
 
     .textos {
@@ -75,11 +81,20 @@ import Redes from "./Redes.astro";
             & .h { color: #db052b; }
             & .aa { color: #2e3fff; }
             & .trimaran { margin-left: 2rem; }
+
+            @media (width <= 768px) {
+                font-size: 4rem;
+            }
         }
 
         & h2 {
             margin-top: -.75rem;
             margin-bottom: 1.5rem;
+
+            @media (width <= 768px) {
+                font-size: 1rem;
+                margin: 0;
+            }
         }
     }
 </style>

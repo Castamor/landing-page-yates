@@ -1,37 +1,3 @@
----
-const services = [
-  {
-    name: "Trimaran Tambaran",
-    img: '/tambaran.png',
-    price: "$8000 MXN",
-  },
-  {
-    name: "Trimaran THE FIGHTER",
-    img: '/fighter.png',
-    price: "$9000 MXN",
-  },
-  {
-    name: "Meus Dois Amores",
-    img: '/meus.png',
-    price: "$10100 MXN",
-  },
-  {
-    name: "Yate de lujo: Nautilus",
-    img: '/nautilus.png',
-    price: "$11000 MXN",
-  },
-  {
-    name: "Yate Constanza",
-    img: '/constanza.png',
-    price: "$7500 MXN",
-  },
-  {
-    name: "Mar y Sol",
-    img: '/marysol.jpg',
-    price: "$9950 MXN",
-  }
-];
----
 <section class="contenido paquetes" id="services">
     <p class="encabezado">¡Elige tu aventura perfecta!</p>
 
@@ -51,16 +17,6 @@ const services = [
                 <p>- Guía especializada en vida marina</p>
             </div>
         </div>
-        
-        <!-- {services.map((service) => (
-            <div class={`package-card`}>
-                <div class="image-placeholder">
-                    <img src={service.img} alt={service.name}/>
-                </div>
-                <h3>{service.name}</h3>
-                <p class="price">{service.price}</p>
-            </div>
-        ))} -->
     </div>
 </section>
 
@@ -74,25 +30,6 @@ const services = [
             "Destacado Destacado";
         gap: 2rem;
     }
-        
-    /* .package-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        background: white;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.2s, box-shadow 0.2s;
-    } */
-
-    /* .package-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
-    } */
 
     .destacado {
         position: relative;
@@ -111,6 +48,7 @@ const services = [
         background-size: cover;
         color: white;
     }
+
     .promo {
         font-weight: bold;
         font-size: 3rem;
@@ -154,20 +92,17 @@ const services = [
         right: 5%;
     }
 
-    /* .image-placeholder {
-        height: 150px;
-        overflow: hidden;
-    }
-    
-    .image-placeholder img{
-        width: 100%;
-        background: #e0e0e0;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-    }
+    @media (max-width: 768px) {
+        .encabezado {
+            margin-bottom: 1rem;
+        }
 
-    .price {
-        font-weight: bold;
-        margin-top: 0.5rem;
-    } */
+        .promo {
+            /* font-size: 2rem; */
+        }
+
+        .precio {
+            font-size: 2.5rem;
+        }
+    }
 </style>

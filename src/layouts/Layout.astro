@@ -1,5 +1,5 @@
 ---
-import Flecha from '@icons/Flecha.astro';
+import IconoFlecha from '@icons/IconoFlecha.astro';
 
 interface Props {
 	title: string;
@@ -24,7 +24,7 @@ const { title, description } = Astro.props;
 	<body id="arriba">
 		<slot />
         <a href="#arriba" class="btn-flotante">
-            <Flecha size={24}/>
+            <IconoFlecha size={24}/>
         </a>
 	</body>
 </html>
@@ -38,27 +38,33 @@ const { title, description } = Astro.props;
     .encabezado {
         text-align: center;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 2.25rem;
+        padding-top: 2.25rem;
+        
+        @media (width <= 48rem) {
+            line-height: 1;
+            font-size: 1.5rem;
+            padding-top: 2rem;
+        }
     }
 
     .descripcion {
         max-width: 800px;
         text-align: center;
+        padding-bottom: 1rem;
         margin: 0 auto;
-    }
 
-    body {
-        display: grid;
-        gap: 2.5rem;
+        @media (width <= 48rem) {
+            font-size: .9rem;
+            margin-top: 1rem;
+        }
     }
     
 	html {
         scroll-behavior: smooth;
         font-family: "Outfit", system-ui;
-        font-optical-sizing: auto;
-        font-style: normal;
         color: black;
-		background: #f9f9f9;
+		background: #ededed;
 	}
 
     li {
@@ -71,11 +77,15 @@ const { title, description } = Astro.props;
         height: var(--size);
     }
 
+    @media (width <= 48rem) {
+        .item .icon { --size: 24px; }
+    }
+
     .btn-flotante {
         position: fixed;
         color: white;
         background-color: rgba(0, 0, 0, 0.3);
-        padding: .8rem;
+        padding: 1rem;
         border-radius: 25%;
         right: 2.5%;
         bottom: 2.5%;
