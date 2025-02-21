@@ -30,6 +30,17 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
+    :root {
+        --borderRadius: .4rem;
+        --encabPrinci: 2.25rem;
+        --encabPrinciResp: 1.5rem;
+        --encabSecu: 1.2rem;
+        --encabSecuResp: 1rem;
+        --lineHeight: 1.25;
+        --separacion: 2.5rem;
+        --separacionResp: 2rem;
+    }
+    
     .contenido {
         width: min(90%, 1100px);
         margin: 0 auto;
@@ -38,13 +49,13 @@ const { title, description } = Astro.props;
     .encabezado {
         text-align: center;
         font-weight: bold;
-        font-size: 2.25rem;
-        padding-top: 2.25rem;
+        font-size: var(--encabPrinci);
+        padding-top: var(--separacion);
         
         @media (width <= 48rem) {
-            line-height: 1;
-            font-size: 1.5rem;
-            padding-top: 2rem;
+            line-height: var(--lineHeight);
+            font-size: var(--encabPrinciResp);
+            padding-top: var(--separacionResp);
         }
     }
 

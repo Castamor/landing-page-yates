@@ -4,9 +4,10 @@ import IconoEdades from "@icons/IconoEdades.astro";
 import IconoHorarios from "@icons/IconoHorarios.astro";
 import IconoUbicacion from "@icons/IconoUbicacion.astro";
 import IconoPersonas from "@icons/IconoPersonas.astro";
+import TextoSeparador from "./TextoSeparador.astro";
 ---
 
-<section class="contenido" id="about">
+<section class="contenido" id="informacion">
     <h3 class="encabezado">Descubre la experiencia perfecta en el mar</h3>
     <p class="descripcion">
         Explora momentos inolvidables con nuestra renta de yates diseñada para paseos privados, celebraciones especiales, despedidas y más. ¡Además, también ofrecemos pesca deportiva para los amantes de la aventura!.
@@ -39,6 +40,11 @@ import IconoPersonas from "@icons/IconoPersonas.astro";
             <p class="enfasis">CAPACIDAD DE PERSONAS</p>
         </div>
     </section>
+
+    <TextoSeparador 
+        encabezado="Explora el lujo y la aventura en alta mar." 
+        subencabezado="Yates de lujo para paseos privados, eventos y experiencias exclusivas."
+    />
 </section>
 
 <style>
@@ -72,7 +78,7 @@ import IconoPersonas from "@icons/IconoPersonas.astro";
         text-align: center;
         background-color: #444;
         color: #fff;
-        border-radius: .4rem;
+        border-radius: var(--borderRadius);
         padding: 1.25rem;
         font-size: 1.3rem;
 
@@ -127,7 +133,7 @@ import IconoPersonas from "@icons/IconoPersonas.astro";
     .edades {
         background: 
             linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
-            url('/people3.jpg');
+            url('/1.jpg');
         background-position: center;
 
         @media (width <= 48rem) {

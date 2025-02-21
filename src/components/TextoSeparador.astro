@@ -1,0 +1,55 @@
+---
+interface Props {
+    encabezado: string;
+    subencabezado: string;
+}
+
+const { encabezado, subencabezado } = Astro.props;
+---
+
+<div class="texto-separador">
+    <h3>{encabezado}</h3>
+    <h4>{subencabezado}</h4>    
+</div>
+
+<style>
+    .texto-separador {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: var(--separacion) 0;
+
+        @media (width <= 48rem ) {
+            padding: var(--separacionResp) 0;
+        }
+
+        h3, h4 { 
+            line-height: 1.25; 
+            font-weight: bold;
+
+            @media (width <= 48rem) {
+                line-height: var(--lineHeight);
+            }
+        }
+        
+        h3 {
+            max-width: 30rem;
+            font-size: var(--encabPrinci);
+
+            @media (width <= 48rem ) {
+                font-size: calc(var(--encabPrinciResp) * .7);
+            }
+        }
+
+        h4 {
+            max-width: 20rem;
+            color: rgb(171, 171, 171);
+            font-size: var(--encabSecu);
+
+            @media (width <= 48rem ) {
+                font-size: calc(var(--encabSecuResp) * .75);
+            }
+        }
+    }
+</style>

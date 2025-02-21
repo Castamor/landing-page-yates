@@ -1,0 +1,104 @@
+---
+import TextoSeparador from "./TextoSeparador.astro";
+
+const imagenes = [
+    { src: "/1.jpg" },
+    { src: "/2.jpg" },
+    { src: "/3.jpg" },
+    { src: "/4.jpg" },
+    { src: "/5.jpg" },
+    { src: "/6.jpg" },
+    { src: "/7.jpg" },
+    { src: "/8.jpg" },
+    { src: "/9.jpg" },
+    { src: "/10.jpg" },
+    { src: "/11.jpg" },
+    { src: "/12.jpg" },
+    { src: "/13.jpg" },
+];
+---
+<section class="contenido" id="galeria">
+    <h3 class="encabezado">Momentos inolvidables en el mar</h3>
+    <p class="descripcion txt-img">Disfruta actividades como veleo, snorkel, y nado en las tranquilas aguas de la Isla de Venados. Observa la fauna marina en su hábitat natural mientras recorres la bahía y sus alrededores.</p>
+    <div class="grid">
+        {imagenes.map((imagen, index) => (
+            <div class=`imagen div${index+1}`>
+                <img src={imagen.src} alt=`${index+1}` />
+            </div>
+        ))}
+    </div>
+
+    <TextoSeparador 
+        encabezado="Siente la libertad del mar con el mejor servicio en yates." 
+        subencabezado="Reservas fáciles y seguras para tu próxima aventura en el mar."
+    />
+</section>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(12, .12fr);
+        gap: 1rem;
+    }
+
+    .div1 { grid-area: 1 / 3 / 3 / 4; }
+    .div2 { grid-area: 1 / 2 / 4 / 3; }
+    .div3 { grid-area: 1 / 1 / 5 / 2; }
+    .div4 { grid-area: 3 / 3 / 7 / 4; }
+    .div5 { grid-area: 5 / 1 / 7 / 2; }
+    .div6 { grid-area: 4 / 2 / 6 / 3; }
+    .div7 { grid-area: 7 / 1 / 11 / 2; }
+    .div8 { grid-area: 11 / 1 / 13 / 2; }
+    .div9 { grid-area: 10 / 3 / 13 / 4; }
+    .div10 { grid-area: 7 / 3 / 10 / 4; }
+    .div11 { grid-area: 10 / 2 / 13 / 3; }
+    .div12 { grid-area: 8 / 2 / 10 / 3; }
+    .div13 { grid-area: 6 / 2 / 8 / 3; }
+
+    @media (width <= 40rem) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(17, .17fr);
+        }
+
+        .div1 { grid-area: 1 / 2 / 3 / 3; }
+        .div2 { grid-area: 1 / 1 / 4 / 2; }
+        .div3 { grid-area: 3 / 2 / 7 / 3; }
+        .div4 { grid-area: 4 / 1 / 8 / 2; }
+        .div5 { grid-area: 7 / 2 / 9 / 3; }
+        .div6 { grid-area: 8 / 1 / 10 / 2; }
+        .div7 { grid-area: 10 / 1 / 14 / 2; }
+        .div8 { grid-area: 14 / 1 / 16 / 2; }
+        .div9 { grid-area: 9 / 2 / 12 / 3; }
+        .div10 { grid-area: 12 / 2 / 15 / 3; }
+        .div11 { grid-area: 15 / 2 / 18 / 3; }
+        .div12 { grid-area: 16 / 1 / 18 / 2; }
+        .div13 {
+            display: none;
+            pointer-events: none;
+        }
+    }
+
+    .imagen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--borderRadius);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center;
+    }
+
+    .imagen img:hover {
+        transform: scale(1.05);
+        transition: transform 400ms ease;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    }
+</style>

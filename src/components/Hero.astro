@@ -5,9 +5,9 @@ import Redes from "./Redes.astro";
 <section class="bg">
     <div class="contenido">
         <ul class="menu">
-            <a href="#about">Información</a>
-            <a href="#services">Paquetes</a>
-            <a href="#gallery">Galería</a>
+            <a href="#informacion">Información</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
         </ul>
         <div class="textos">
             <h1>
@@ -37,7 +37,7 @@ import Redes from "./Redes.astro";
         --opacity: 0.5;
         background: 
             linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
-            url('/10.jpg')
+            url('/9.jpg')
         ;
         background-position: center;
         background-size: cover;
@@ -54,7 +54,7 @@ import Redes from "./Redes.astro";
 
         & a {
             padding: .5rem 1.5rem;
-            border-radius: .5rem;
+            border-radius: var(--borderRadius);
             cursor: pointer;
         }
 

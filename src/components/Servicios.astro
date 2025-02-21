@@ -1,55 +1,181 @@
-<section class="contenido" id="services">
+---
+import IconoCapitan from "@icons/IconoCapitan.astro";
+import IconoCertificado from "@icons/IconoCertificado.astro";
+import IconoDinero from "@icons/IconoDinero.astro";
+import IconoSonido from "@icons/IconoSonido.astro";
+---
 
-    <h3 class="encabezado">¡Elige tu aventura perfecta!</h3>
+<section class="contenido" id="servicios">
     <div class="img">
-        <h4 class="titulo">
+        <h4 class="img-titulo">
             <span>TOUR</span>
             AVISTAMIENTO DE BALLENAS
         </h4>
     </div>
 
-    <article>
-        <div>
-            <h5></h5>
-            <p></p>
-            <p></p>
-            <redes></redes>
+    <section class="info">
+        <div class="izquierda">
+            <h3>No es solo un tour, es una aventura que recordarás para siempre.</h3>
+            <div class="contenedor-txt">
+                <p class="txt">Nuestro tour está <span>certificado por SEMARNAT</span>, lo que significa que cumplimos con todos los estándares de seguridad y sostenibilidad para garantizar un avistamiento de ballenas <span>ético, responsable y 100% legal</span>.</p>
+                <p class="txt">A diferencia de otros tours, nosotros te ofrecemos un recorrido exclusivo con <span>expertos en vida marina, equipo especializado y todas las comodidades</span> para que disfrutes cada momento. No solo verás ballenas, sino que escucharás su canto con nuestro <span>hidrófono en tiempo real</span>, aprenderás sobre su comportamiento y te relajarás con un <span>desayuno a bordo</span> mientras navegas por los paisajes más espectaculares del Pacífico.</p>
+
+                <p class="txt">No pierdas más el tiempo, sé testigo del espectáculo natural más asombroso: <span>gigantes del océano en su hábitat natural.</span></p>
+            </div>
         </div>
 
-        <aside>
-            <p></p>
-            <p></p>
-            <p></p>
-            <p></p>
+        <aside class="contenedor-logos">
+            <div class="casilla">
+                <span class="logo dinero"><IconoDinero /></span>
+                <p class="texto dinero">Precios Bajos</p>
+            </div>
+            <div class="casilla">
+                <span class="logo certificado"><IconoCertificado /></span>
+                <p class="texto certificado">Certificado SEMARNAT</p>
+            </div>
+            <div class="casilla">
+                <span class="logo capitan"><IconoCapitan /></span>
+                <p class="texto capitan">Guía Profesional</p>
+            </div>
+            <div class="casilla">
+                <span class="logo sonido"><IconoSonido /></span>
+                <p class="texto sonido">Hidrófono</p>
+            </div>
         </aside>
-    </article>
+    </section>
 </section>
 
 <style>
+    
     .img {
         --opacity: .4;
         height: 20rem;
-        border-radius: .4rem;
+        border-radius: var(--borderRadius);
         background: 
             linear-gradient(to top, rgba(0, 0, 0, var(--opacity)), rgba(0, 0, 0, var(--opacity))),
             url('/ballenas.jpg');
         background-position: center;
+        background-size: cover;
 
         display: grid;
         place-items: center;
+
+        @media (width <= 48rem) { height: 10rem; }
+
+        .img-titulo {
+            color: white;
+            font-weight: bold;
+            font-size: 2.25rem;
+            position: relative;
+
+            @media (width <= 48rem) { font-size: 1.4rem; }
+
+            & span {
+                color: #60c0e4;
+                font-size: 1.25rem;
+                position: absolute;
+                top: -30%;
+
+                @media (width <= 48rem) { font-size: .9rem; top: -40%; }
+            }
+        }
     }
 
-    .titulo {
-        color: white;
-        font-weight: bold;
-        font-size: 2.25rem;
+    .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: var(--separacion);
+
+        @media (width <= 60rem) {
+            display: flex;
+            flex-direction: column;
+            gap: var(--separacionResp);
+        }
+
+        h3 {
+            font-size: var(--encabPrinci);
+            font-weight: bold;
+            margin-bottom: calc(var(--separacion) / 2);
+
+            @media (width <= 48rem) { font-size: var(--encabPrinciResp); line-height: var(--lineHeight); }
+        }
+
+        .contenedor-txt {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--separacion) / 2);
+         
+            .txt span {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .contenedor-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-content: center;
+        gap: 1rem;
+    }
+
+    .casilla {
+        display: grid;
+        place-items: center;
         position: relative;
 
-        & span {
-            color: #60c0e4;
-            font-size: 1rem;
+        .logo {
+            --s: 14rem;
+            padding: 2rem;
+
+            @media (width <= 65rem) { --s: 13rem; }
+            @media (width <= 60rem) { --s: 11rem; }
+            @media (width <= 53rem) { --s: 10rem; }
+            @media (width <= 48rem) { --s: 9rem; padding: 1.5rem; }
+            @media (width <= 44rem) { --s: 13rem;}
+            @media (width <= 30rem) { --s: 10rem;}
+
+            width: var(--s);
+            height: var(--s);
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            transition: padding 400ms;
+
+            &.dinero        { background-color: rgb(71 120 41);}
+            &.capitan       { background-color: rgb(28 93 152);}
+            &.sonido        { background-color: rgb(70 65 187);}
+            &.certificado   { 
+                background-color: rgb(232, 148, 13);
+                padding: 2.75rem;
+
+                @media (width <= 48rem) { padding: 2.25rem; }
+
+                &:hover {
+                    padding: 1.75rem;
+                }
+            }
+
+            &:hover {
+                padding: 1.5rem;
+
+                @media (width <= 48rem) { padding: 1.25rem; }
+            }
+        }
+
+        .texto {
             position: absolute;
-            top: -20%;
+            bottom: 0;
+            color: white;
+            width: max-content;
+            padding: .25rem .5rem;
+            border-radius: var(--borderRadius);
+            font-weight: 500;
+
+            &.dinero        { background-color: rgb(100,176,53);}
+            &.certificado   { background-color: rgb(239 86 62);}
+            &.capitan       { background-color: rgb(63 148 226);}
+            &.sonido        { background-color: rgb(139 135 224);}
         }
     }
 </style>
