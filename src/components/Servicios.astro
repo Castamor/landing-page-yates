@@ -84,7 +84,7 @@ import IconoSonido from "@icons/IconoSonido.astro";
     .info {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin-top: var(--separacion);
+        margin-top: calc(var(--separacion) / 2);
 
         @media (width <= 60rem) {
             display: flex;
@@ -171,6 +171,7 @@ import IconoSonido from "@icons/IconoSonido.astro";
             padding: .25rem .5rem;
             border-radius: var(--borderRadius);
             font-weight: 500;
+            user-select: none;
 
             &.dinero        { background-color: rgb(100,176,53);}
             &.certificado   { background-color: rgb(239 86 62);}
