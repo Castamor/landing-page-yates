@@ -37,6 +37,8 @@ const videos: string[] = [
 
     section {
         margin-bottom: calc(var(--separacion) * 2);
+
+        @media (width <= 48rem) { margin-bottom: var(--separacion); }
     }
 
     @keyframes scroll {
@@ -64,5 +66,7 @@ const videos: string[] = [
         object-fit: cover;
         border-radius: var(--borderRadius);
         pointer-events: none;
+
+        @media (width <= 48rem) { width: 9rem; }
     }
 </style>

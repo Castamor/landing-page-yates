@@ -85,11 +85,12 @@ import IconoSonido from "@icons/IconoSonido.astro";
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-top: var(--separacion);
-
+        
         @media (width <= 60rem) {
             display: flex;
             flex-direction: column;
             gap: var(--separacionResp);
+            margin-top: var(--separacionResp);
         }
 
         h3 {
