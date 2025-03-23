@@ -1,0 +1,57 @@
+---
+const videos: string[] = [
+    '/video1.mp4',
+    '/video2.mp4',
+    '/video3.mp4',
+    '/video4.mp4',
+    '/video5.mp4',
+    '/video6.mp4',
+    '/video7.mp4',
+];
+---
+
+<div class="contenido carrusel-contenedor">
+    <div class='carrusel'>
+    {videos.concat(videos).map((video: string) => (
+      <video
+        src={video}
+        autoplay
+        loop
+        muted
+        playsinline
+        class="video-item"
+      />
+    ))}
+  </div>
+</div>
+
+<style>
+    :root {
+        --duracion: 90s;
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+
+    .carrusel-contenedor {
+        overflow: hidden;
+    }
+
+    .carrusel {
+        display: flex;
+        gap: 1.5rem;
+        width: max-content;
+        animation: scroll var(--duracion) linear infinite;
+    }
+
+    .video-item {
+        width: 16rem;
+        aspect-ratio: 9 / 16;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+        border-radius: var(--borderRadius);
+        pointer-events: none;
+    }
+</style>
