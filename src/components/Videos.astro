@@ -1,4 +1,6 @@
 ---
+import TextoSeparador from "./TextoSeparador.astro";
+
 const videos: string[] = [
     '/video1.mp4',
     '/video2.mp4',
@@ -9,8 +11,13 @@ const videos: string[] = [
     '/video7.mp4',
 ];
 ---
+<section class="contenido">
+    <TextoSeparador
+        encabezado="Descubre lo que te espera en esta experiencia inolvidable." 
+        subencabezado="Cada video es solo un vistazo de lo que podrás vivir en persona."
+    />
 
-<div class="contenido carrusel-contenedor">
+<div class="carrusel-contenedor">
     <div class='carrusel'>
     {videos.concat(videos).map((video: string) => (
       <video
@@ -24,10 +31,12 @@ const videos: string[] = [
     ))}
   </div>
 </div>
+</section>
 
 <style>
-    :root {
-        --duracion: 90s;
+
+    section {
+        margin-bottom: calc(var(--separacion) * 2);
     }
 
     @keyframes scroll {
@@ -37,9 +46,11 @@ const videos: string[] = [
 
     .carrusel-contenedor {
         overflow: hidden;
+        width: 100%;
     }
 
     .carrusel {
+        --duracion: 90s;
         display: flex;
         gap: 1.5rem;
         width: max-content;
